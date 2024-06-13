@@ -7,7 +7,9 @@ const App: React.FC = () => {
   const socketRef = useRef<WebSocket | null>(null);
 
   useEffect(() => {
-    socketRef.current = new WebSocket(process.env.WS_URL!);
+
+
+    socketRef.current = new WebSocket("wss://ws-be-60wr.onrender.com");
 
     socketRef.current.onopen = () => {
       console.log('Connected to server');
